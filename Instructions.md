@@ -4,8 +4,6 @@ This is a simple WordPress Child Theme. All the files you need to see and change
 
 You may access the site visiting http://localhost/wp-test.
 
-The test starts when you click the first post of the site, named "Hello World", you will see the page breaks. 
-
 If you need, the Dashboard can be accessed with user admin and password admin.
 
 ## The test
@@ -13,6 +11,7 @@ If you need, the Dashboard can be accessed with user admin and password admin.
 ### The basics
 
 * First, fix the site.
+* After you fix the home page, click the Hello World post and fix it too
 * In the "Extra metadata" section, see if you can optimize anything in the way the data is displayed
 
 
@@ -22,7 +21,9 @@ If you need, the Dashboard can be accessed with user admin and password admin.
 #### 1. Simple javascript
 
 Using jQuery, CSS and some HTML, hide the "Extra Metadata" contents (only the metadatas, not the section title) 
-and make it visible by clicking in the section title. The click should have a toggle behavior (click once, displays content, click again, hide content, and so on)
+and make it visible by clicking in the section title. 
+
+Click should have a toggle behavior (click once, displays content, click again, hide content, and so on).
 
 
 #### 2. WordPress Custom field
@@ -30,9 +31,5 @@ and make it visible by clicking in the section title. The click should have a to
 Create a new WordPress custom fiel (post meta) for the post and display it along with the other metadata under the "Extra metadata" section.
 
 The field can have any name and its value is a simple string.
-
-You have to add a graphical interface in the Edit post screen in the dashboard, so user can assign a value when creating or editing a post.
-
-Google is your friend.
 
 
