@@ -1,4 +1,4 @@
-# Instrucitions
+# Instructions
 
 This is a simple WordPress Child Theme. All the files you need to see and change are inside this theme.
 
@@ -10,9 +10,11 @@ If you need, the Dashboard can be accessed with user admin and password admin.
 
 ### The basics
 
-* First, fix the site.
-* After you fix the home page, click the Hello World post and fix it too
-* In the "Extra metadata" section, see if you can optimize anything in the way the data is displayed
+a) First, fix the site.
+
+b) After you fix the home page, click the Hello World post and fix it too
+
+c) In the "Extra metadata" section, there is something you can and should optimize in the code. Look for useless functions, iterations or anything that could be done in a better way to improve performance
 
 
 ### The challanges
@@ -33,3 +35,6 @@ Create a new WordPress custom fiel (post meta) for the post and display it along
 The field can have any name and its value is a simple string.
 
 
+#### 3. Create a Class
+
+Inside functions.php, create a small class to handle the "Extra metadata" section. It should receive the post ID and do everything necessary to output the same content. Remove any business logic from the template file and put it inside this class.
