@@ -19,7 +19,7 @@
 			endif;
 
 			if ( is_single() ) {
-				the_title( '<h1 class="entry-title">', '</h1>' );
+				the_title( '<h1 class="entry-title" onclick="toggleExtraMetadata()">', '</h1>' );
 			} else {
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
@@ -50,28 +50,16 @@
 			) );
 		?>
         
-        <?php
-        $evaluation = get_post_meta(get_the_ID(), '_evaluation_data', true);
-        $dictionary = array(
-            'Horrible' => '10%',
-            'Not good' => '30%',
-            'Regular' => '50%',
-            'Not bad' => '70%',
-            'Good' => '85%',
-            'Awesome!' => '100%'
-        );
-        ?>
-        <h3>Extra metadata</h3>
-        
-        <b>Evaluation:</b> <?php echo $evaluation['evaluation']; ?> <br/>
-        <b>Criteria:</b> <?php echo $evaluation['criteria']; ?> <br/>
-        <b>Rating:</b> 
-        <?php foreach ($dictionary as $ev => $rating) ?> 
-        
-            <?php if ($ev == $evaluation['evaluation']) echo $rating; ?>
-        
-        <?php endforeach; ?>
-        <br/>
+       	<?php $extra_metadata = ExtraMetadata::manage_post_extra_metadata(get_the_ID()); ?>
+
+        <div id='extra_metadata' style='display:none'>
+			<h3>Extra metadata</h3>
+			<b>Evaluation:</b> <?php echo $extra_metadata['evaluation']; ?> <br/>
+			<b>Criteria:</b> <?php echo $extra_metadata['criteria']; ?> <br/>
+			<b>Rating:</b>  <?php echo $extra_metadata['rating']; ?> <br/>
+			<b>Mood:</b> <?php echo $extra_metadata['mood']; ?> </br>
+			<b>Post title: </b> <?php echo $extra_metadata['title']; ?> </br>
+        </div>
         
 	</div><!-- .entry-content -->
 
